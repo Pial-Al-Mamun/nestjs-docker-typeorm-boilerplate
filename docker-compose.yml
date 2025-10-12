@@ -4,7 +4,7 @@ services:
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_DB: todo_app
+      POSTGRES_DB: db
     ports:
       - 5432:5432
     volumes:
@@ -13,7 +13,7 @@ services:
       - backend-network
     restart: unless-stopped
     healthcheck:
-      test: ["CMD-SHELL", "sh -c 'PGPASSWORD=${DB_PASSWORD} pg_isready -U user -d todo_app'"]
+      test: ["CMD-SHELL", "sh -c 'PGPASSWORD=${DB_PASSWORD} pg_isready -U user -d db'"]
       interval: 1m30s
       timeout: 30s
       retries: 5

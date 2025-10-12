@@ -19,6 +19,13 @@ This boilerplate provides a ready-to-use setup for building NestJS applications 
 
 ---
 
+### ⚙️ Quick Navigation
+
+- [Setup](#setup)
+- [Optional: Move NestJS into a Backend Folder](#optional-move-nestjs-into-a-backend-folder)
+
+---
+
 ### Setup
 
 1. Copy the example environment file:
@@ -31,4 +38,21 @@ cp .env.example .env
 
 ```bash
 docker compose up -d
-``` 
+```
+
+### Optional: Move NestJS into a backend Folder
+
+If you prefer keeping the NestJS app inside a backend/ directory:
+
+1. move everything to the backend folder
+
+```bash
+mv !(docker-compose.yml) backend/
+```
+
+2. change the backend service in docker compose
+
+```yml
+backend:
+  build: './backend'
+```
