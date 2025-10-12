@@ -7,7 +7,7 @@ This boilerplate provides a ready-to-use setup for building NestJS applications 
 - PostgreSQL via Docker
 - TypeORM integration
 - Environment variable validation with Zod, including type safety
-
+- Runs on the FastifyAdapter
 ---
 
 ### Features
@@ -56,3 +56,4 @@ mv !(docker-compose.yml) backend/
 backend:
   build: './backend'
 ```
+
